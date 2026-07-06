@@ -70,12 +70,12 @@ public class CacheEntry {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CacheEntry cacheEntry = (CacheEntry) o;
-        return Objects.equals(key, cacheEntry.key) && Objects.equals(value, cacheEntry.value);
+        return Objects.equals(key, cacheEntry.key);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, value);
+        return Objects.hash(key);
     }
 
     @Override
