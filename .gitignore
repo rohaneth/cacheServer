@@ -25,3 +25,11 @@ Thumbs.db
 
 # Log files
 *.log
+
+# Claude/AI assistant files
+.claude/
+.superpowers/
+CLAUDE.md
+MEMORY.md
+AGENTS.md
+GEMINI.md
