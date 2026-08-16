@@ -1,0 +1,27 @@
+# Java/Maven
+target/
+*.jar
+*.war
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# JVM crash logs
+hs_err_pid*.log
+replay_pid*.log
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Log files
+*.log

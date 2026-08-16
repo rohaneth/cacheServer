@@ -1,13 +1,11 @@
 package com.cache.distributed.hashring;
 
 import com.cache.distributed.model.NodeInfo;
-import org.springframework.stereotype.Component;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.stream.Collectors;
 
-@Component
 public class ConsistentHash {
 
     private final int virtualNodesPerPhysical;

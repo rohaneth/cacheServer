@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  coordinator:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: coordinator
+      COORDINATOR_PORT: 8080
+    networks:
+      - cache-network
+
+  node-1:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: node
+      NODE_PORT: 8081
+      NODE_ID: node-1
+    networks:
+      - cache-network
+    depends_on:
+      - coordinator
+
+  node-2:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_PROFILES_ACTIVE: node
+      NODE_PORT: 8082
+      NODE_ID: node-2
+    networks:
+      - cache-network
+    depends_on:
+      - coordinator
+
+  node-3:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_PROFILES_ACTIVE: node
+      NODE_PORT: 8083
+      NODE_ID: node-3
+    networks:
+      - cache-network
+    depends_on:
+      - coordinator
+
+networks:
+  cache-network:
+    driver: bridge
