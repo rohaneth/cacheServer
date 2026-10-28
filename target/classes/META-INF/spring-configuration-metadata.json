@@ -1,0 +1,41 @@
+{
+  "groups": [
+    {
+      "name": "node",
+      "type": "com.cache.distributed.node.NodeConfig",
+      "sourceType": "com.cache.distributed.node.NodeConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "node.default-ttl",
+      "type": "java.lang.Integer",
+      "sourceType": "com.cache.distributed.node.NodeConfig",
+      "defaultValue": 3600
+    },
+    {
+      "name": "node.host",
+      "type": "java.lang.String",
+      "sourceType": "com.cache.distributed.node.NodeConfig",
+      "defaultValue": "localhost"
+    },
+    {
+      "name": "node.max-memory",
+      "type": "java.lang.Integer",
+      "sourceType": "com.cache.distributed.node.NodeConfig",
+      "defaultValue": 1000
+    },
+    {
+      "name": "node.node-id",
+      "type": "java.lang.String",
+      "sourceType": "com.cache.distributed.node.NodeConfig"
+    },
+    {
+      "name": "node.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.cache.distributed.node.NodeConfig",
+      "defaultValue": 8081
+    }
+  ],
+  "hints": []
+}

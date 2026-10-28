@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: distributed-cache
+
+---
+spring:
+  config:
+    activate:
+      on-profile: coordinator
+
+server:
+  port: 8080
+
+coordinator:
+  virtual-nodes-per-physical: 100
+  health-check-interval-seconds: 5
+  node-timeout-seconds: 15
+
+---
+spring:
+  config:
+    activate:
+      on-profile: node
+
+server:
+  port: 8081
+
+node:
+  node-id: node-1
+  host: localhost
+  port: 8081
+  max-memory: 1000
+  default-ttl: 3600
+
+coordinator:
+  url: http://localhost:8080
